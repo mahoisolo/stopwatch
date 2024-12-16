@@ -4,9 +4,9 @@ using System.Threading;
 public class Stopwatch
 {
     public delegate void StopwatchEventHandler(string message);
-    public event StopwatchEventHandler? OnStarted; // Use nullable event
-    public event StopwatchEventHandler? OnStopped; // Use nullable event
-    public event StopwatchEventHandler? OnReset; // Use nullable event
+    public event StopwatchEventHandler? OnStarted; 
+    public event StopwatchEventHandler? OnStopped; 
+    public event StopwatchEventHandler? OnReset; 
 
     private TimeSpan timeElapsed;
     private bool isRunning;
@@ -63,7 +63,7 @@ class Program
     {
         Stopwatch stopwatch = new Stopwatch();
 
-        // Subscribe to events
+       
         stopwatch.OnStarted += message => Console.WriteLine(message);
         stopwatch.OnStopped += message => Console.WriteLine(message);
         stopwatch.OnReset += message => Console.WriteLine(message);
